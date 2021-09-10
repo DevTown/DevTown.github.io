@@ -2,27 +2,30 @@
 <head>
 <meta charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
-<title>Dev-Town.de</title>
+<title>Mehrstufiges Dockerimage für .NET | Dev-Town.de</title>
 <meta name=viewport content="width=device-width,minimum-scale=1">
-<meta name=description content="Meine kleine Welt">
+<meta name=description content="Wie baue ich ein Buildimage für .Net-Core mit Docker?">
 <meta name=generator content="Hugo 0.87.0">
 <meta name=ROBOTS content="NOINDEX, NOFOLLOW">
 <link rel=stylesheet href=/ananke/css/main.min.css>
 <link rel=stylesheet href=/css/custom.css>
-<link href=/blog/index.xml rel=alternate type=application/rss+xml title=Dev-Town.de>
-<link href=/blog/index.xml rel=feed type=application/rss+xml title=Dev-Town.de>
-<meta property="og:title" content="Blogs">
-<meta property="og:description" content="Meine kleine Welt">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://dev-town.de/blog/">
-<meta itemprop=name content="Blogs">
-<meta itemprop=description content="Meine kleine Welt"><meta name=twitter:card content="summary">
-<meta name=twitter:title content="Blogs">
-<meta name=twitter:description content="Meine kleine Welt">
+<meta property="og:title" content="Mehrstufiges Dockerimage für .NET">
+<meta property="og:description" content="Wie baue ich ein Buildimage für .Net-Core mit Docker?">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://dev-town.de/blog/dotnet_als_dockerbuild/"><meta property="article:section" content="blog">
+<meta property="article:published_time" content="2021-08-26T13:58:10+02:00">
+<meta property="article:modified_time" content="2021-08-26T13:58:10+02:00">
+<meta itemprop=name content="Mehrstufiges Dockerimage für .NET">
+<meta itemprop=description content="Wie baue ich ein Buildimage für .Net-Core mit Docker?"><meta itemprop=datePublished content="2021-08-26T13:58:10+02:00">
+<meta itemprop=dateModified content="2021-08-26T13:58:10+02:00">
+<meta itemprop=wordCount content="348">
+<meta itemprop=keywords content><meta name=twitter:card content="summary">
+<meta name=twitter:title content="Mehrstufiges Dockerimage für .NET">
+<meta name=twitter:description content="Wie baue ich ein Buildimage für .Net-Core mit Docker?">
 </head>
 <body class="ma0 avenir bg-near-white">
-<header class="cover bg-top" style=background-image:url(https://dev-town.de/images/top.png)>
-<div class=bg-black-60>
+<header class="cover bg-top" style=background-image:url(https://dev-town.de/images/Moby-logo.png)>
+<div class="pb3-m pb6-l bg-black-60">
 <nav class="pv3 ph3 ph4-ns" role=navigation>
 <div class="flex-l justify-between items-center center">
 <a href=/ class="f3 fw2 hover-white no-underline white-90 dib">
@@ -68,110 +71,85 @@ Impressum
 </div>
 </div>
 </nav>
-<div class="tc-l pv4 pv6-l ph3 ph4-ns">
-<h1 class="f2 f-subheadline-l fw2 white-90 mb0 lh-title">
-Blogs
-</h1>
+<div class="tc-l pv6 ph3 ph4-ns">
+<h1 class="f2 f1-l fw2 white-90 mb0 lh-title">Mehrstufiges Dockerimage für .NET</h1>
+<h2 class="fw1 f5 f3-l white-80 measure-wide-l center lh-copy mt3 mb4">
+Wie baue ich ein Buildimage für .Net-Core mit Docker?
+</h2>
 </div>
 </div>
 </header>
 <main class=pb7 role=main>
-<article class="pa3 pa4-ns nested-copy-line-height nested-img">
-<section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
-<section class="flex-ns flex-wrap justify-around mt5">
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/round_ist_nicht_gleich_round/ class="link black dim">
-Round ist nicht gleich round
+<article class="flex-l flex-wrap justify-between mw8 center ph3">
+<header class="mt4 w-100">
+<aside class="instapaper_ignoref b helvetica tracked">
+BLOGS
+</aside>
+<div id=sharing class=mt3>
+<a href="https://www.facebook.com/sharer.php?u=https://dev-town.de/blog/dotnet_als_dockerbuild/" class="facebook no-underline" aria-label="share on Facebook"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765 50.32h6.744V33.998h4.499l.596-5.624h-5.095l.007-2.816c0-1.466.14-2.253 2.244-2.253h2.812V17.68h-4.5c-5.405.0-7.307 2.729-7.307 7.317v3.377h-3.369v5.625h3.369V50.32zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd"/></svg>
 </a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Wer schonmal in den Genuss gekommen ist mit .NET und dem MS-SQL Server zu arbeiten und gleichzeitig im .NET Code und auf dem SQL-Server berechnungen vornehmen musste kennt hoffentlich bereits das Default problem der beiden Round-Methoden. Wenn nicht hier ein kleiner Hinweis.
-Round auf dem MSSQL-Server Auf dem SQL-Server benutzt die Round-Methode als default die variation AwayFromZero.(Kaufmännisches Runden)
-Round in .NET In .NET Framework ist die Default Methode beim Runden ToEven (Runden zur nächsten geraden Zahl).
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/dotnet_als_dockerbuild/ class="link black dim">
-Mehrstufiges Dockerimage für .NET
+<a href="https://twitter.com/share?url=https://dev-town.de/blog/dotnet_als_dockerbuild/&text=Mehrstufiges%20Dockerimage%20f%c3%bcr%20.NET" class="twitter no-underline" aria-label="share on Twitter"><svg height="32" style="enable-background:new 0 0 67 67" viewBox="0 0 67 67" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167 22.283c-2.619.953-4.274 3.411-4.086 6.101l.063 1.038-1.048-.127c-3.813-.487-7.145-2.139-9.974-4.915l-1.383-1.377-.356 1.017c-.754 2.267-.272 4.661 1.299 6.271.838.89.649 1.017-.796.487-.503-.169-.943-.296-.985-.233-.146.149.356 2.076.754 2.839.545 1.06 1.655 2.097 2.871 2.712l1.027.487-1.215.021c-1.173.0-1.215.021-1.089.467.419 1.377 2.074 2.839 3.918 3.475l1.299.444-1.131.678c-1.676.976-3.646 1.526-5.616 1.568C19.775 43.256 19 43.341 19 43.405c0 .211 2.557 1.397 4.044 1.864 4.463 1.377 9.765.783 13.746-1.568 2.829-1.673 5.657-5 6.978-8.221.713-1.716 1.425-4.851 1.425-6.354.0-.975.063-1.102 1.236-2.267.692-.678 1.341-1.419 1.467-1.631.21-.403.188-.403-.88-.043-1.781.636-2.033.551-1.152-.402.649-.678 1.425-1.907 1.425-2.267.0-.063-.314.042-.671.233-.377.212-1.215.53-1.844.72l-1.131.361-1.027-.7c-.566-.381-1.361-.805-1.781-.932C39.766 21.902 38.131 21.944 37.167 22.283zM33 64C16.432 64 3 50.569 3 34S16.432 4 33 4s30 13.431 30 30S49.568 64 33 64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Wofür benötige ich das ? Die Idee eines Docker-Images ist es ja, das ganze Image nicht all zu weit aufplustern mit Inhalten, die für den Betrieb eigentlich nicht benötigt werden. Also nehmen wir uns ganz einfach gesagt, unseren Code, laden diesen in das erste Docker-Images in dem wir dann alles ganz normal kompilieren und danach nehmen wir den Output des Release-Build und laden diesen in einen weiteren Docker-Container um in diesem dann die Webseite zu betreiben.
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/hacktoberfest2019/ class="link black dim">
-Hacktoberfest2019
+<a href="https://www.linkedin.com/shareArticle?mini=true&url=https://dev-town.de/blog/dotnet_als_dockerbuild/&title=Mehrstufiges%20Dockerimage%20f%c3%bcr%20.NET" class="linkedin no-underline" aria-label="share on LinkedIn"><svg height="32" style="enable-background:new 0 0 65 65" viewBox="0 0 65 65" width="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M50.837 48.137V36.425c0-6.275-3.35-9.195-7.816-9.195-3.604.0-5.219 1.983-6.119 3.374V27.71h-6.79c.09 1.917.0 20.427.0 20.427h6.79V36.729c0-.609.044-1.219.224-1.655.49-1.22 1.607-2.483 3.482-2.483 2.458.0 3.44 1.873 3.44 4.618v10.929H50.837zM22.959 24.922c2.367.0 3.842-1.57 3.842-3.531-.044-2.003-1.475-3.528-3.797-3.528s-3.841 1.524-3.841 3.528c0 1.961 1.474 3.531 3.753 3.531H22.959zM34 64C17.432 64 4 50.568 4 34 4 17.431 17.432 4 34 4s30 13.431 30 30c0 16.568-13.432 30-30 30zM26.354 48.137V27.71h-6.789v20.427h6.789z" style="fill-rule:evenodd;clip-rule:evenodd;fill:"/></svg>
 </a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Was ist das Hacktoberfest ? Das Hacktoberfest ist ein Event von DIGITALOCEAN betreut und gesponsert wird. Bei diesem Event geht es darum OpenSource-Projekte zu fördern und den Gedanken von OpenSource weiter in die Welt zu tragen. Als kleinen Anreiz erhalten die ersten 50,000 Teilnehmer, die mindestens 4 PR&rsquo;s (PullRequests) an ein OpenSource-Projekt gestellt haben, ein T-Shirt mit dem Aufdruck des Logos des Hacktoberfestes.
-Wie bin ich darauf gestoßen ? Ich bin im vergangenen Jahr auf das Hacktoberfest und damals auch auf die von Microsoft gestartete OpenSource-Initiative aufmerksam geworden, als ich selbst mit der Programmierung für den Hector9000 angefangen habe.
+</div>
+<h1 class="f1 athelas mt3 mb1">Mehrstufiges Dockerimage für .NET</h1>
+<time class="f6 mv4 dib tracked" datetime=2021-08-26T13:58:10+02:00>August 26, 2021</time>
+</header>
+<div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><h2 id=wofür-benötige-ich-das->Wofür benötige ich das ?</h2>
+<p>Die Idee eines Docker-Images ist es ja, das ganze Image nicht all zu weit aufplustern mit Inhalten, die für den Betrieb eigentlich nicht benötigt werden. Also nehmen wir uns ganz einfach gesagt, unseren Code, laden diesen in das erste Docker-Images in dem wir dann alles ganz normal kompilieren und danach nehmen wir den Output des Release-Build und laden diesen in einen weiteren Docker-Container um in diesem dann die Webseite zu betreiben.
+Dadurch benötigen wir für das eigentliche Image nur die Komponenten des .NET Frameworks, welche wir auch für den Betrieb und nicht nur für die Kompilation benötigen. Also alles etwas kleiner und schlanker.
+Vorteil: Wir kompilieren unseren Code nicht bei uns auf dem Rechner, sondern in einer immer gleichen Umgebung und können danach unsere Web-App einzeln in einem Docker-Image betreiben.</p>
+<h2 id=wie-baue-ich-eine-mehrstufiges-dockerimage-für-aspnet>Wie baue ich eine mehrstufiges Dockerimage für ASP.NET?</h2>
+<p>Wir gehen erstmal davon aus, dass wir eine .NET-Core WebApp haben und diese per Docker ausrollen möchten.
+Als erstes müssen wir unseren Code natürlich Builden. Dazu benötigen wir das SDK des Frameworks.
+Danach Server Build, also in unserem Fall das dotnet/aspnet:5.0 Image welches direkt von Microsoft bereitgestellt wird.</p>
+<p>Also bauen wir unser DockerFile wie folgt auf:</p>
+<ol>
+<li>SDK-Image von Microsoft laden</li>
+<li>optional: Workdir setzen</li>
+<li>Sourcen kopieren</li>
+<li>Abhängigkeiten wiederherstellen</li>
+<li>und nun alles kopieren, erstellen und Builden</li>
+<li>Danach nehmen wir uns das Image um ASP NET sourcen laufen zu lassen</li>
+<li>Wechsel des WORKDIR</li>
+<li>Kopieren uns den output des vorherigen Images in unser neues</li>
+<li>Setzen den startpunkt</li>
+<li>Und haben es schon geschafft.</li>
+</ol>
+<p>Hier ein Beispiel eines fertigen Dockerfiles:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-docker data-lang=docker>   <span style=color:#75715e># https://hub.docker.com/_/microsoft-dotnet</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   WORKDIR /source<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span> <span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   <span style=color:#75715e># copy csproj and restore as distinct layers</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   COPY *.csproj .<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   RUN dotnet restore<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span> <span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   <span style=color:#75715e># copy and publish app and libraries</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   COPY . .<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   RUN dotnet restore<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   RUN dotnet publish -c release -o /app --no-restore<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span> <span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   <span style=color:#75715e># final stage/image</span><span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   FROM mcr.microsoft.com/dotnet/aspnet:5.0<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   WORKDIR /app<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   COPY --from<span style=color:#f92672>=</span>build /app .<span style=color:#960050;background-color:#1e0010>
+</span><span style=color:#960050;background-color:#1e0010></span>   ENTRYPOINT <span style=color:#f92672>[</span><span style=color:#e6db74>&#34;dotnet&#34;</span>, <span style=color:#e6db74>&#34;PROJECTNAME.dll&#34;</span><span style=color:#f92672>]</span></code></pre></div>
+<h2 id=zusammenfassung>Zusammenfassung</h2>
+<p>Durch den Einstieg in die mehrstufige DockerFiles erhalten wir diverse Möglichkeiten unsere Web-Apps einfach und schnell zu bauen und zu betreiben. Dies ist natürlich nur ein Beispiel für mehrstufig DockerFiles.</p>
+<h2 id=links>Links</h2>
+<ol>
+<li><a href=https://docs.docker.com/develop/develop-images/multistage-build/>Docker docs</a></li>
+</ol>
+<ul class=pa0>
+</ul>
+<div class="mt6 instapaper_ignoref">
 </div>
 </div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/hector9000-umbau/ class="link black dim">
-Hector9000 Umbau
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Was ist der Hector9000 ? Der Hector9000 ist ein selbst entworfener und gebauter Cocktailroboter. Er verfügt über 12 Getränkeeingänge die durch einen Raspberry gesteuert und mit etwas Pythonmagie zu diversen Cocktails zusammengefügt werden.
-Der Umbau Aktuell wird der Hector9000 direkt mit einer GUI angesteuert die mit KIVY realisiert wurde. Hier haben wir leider das Problem, dass die GUI doch etwas sehr langsam auf dem Pi reagiert und wir hier auch generell noch im Hintergrund einige Umbauten angestrebt haben, die es uns ermöglichen auch weitere Addons einfacher einzubauen.
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/gitkraken-als-gitclient/ class="link black dim">
-Gitkraken Als Gitclient
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Warm GitKraken? Als ich angefangen habe privat mit Git zu arbeiten habe ich auch das Bedürfnis nach einem passenden Client gehabt. Dieser solle auf allen meinen Systemen (Win,Mac und Linux) laufen und natürlich auch noch die Arbeit erleichtern. Nach etwas suchen und ausprobieren, viel die die Wahl auf GitKraken.
-Dieser Client läuft auf allen Betriebssystemen die ich im Einsatz habe und ist zudem für den OpenSource gebraucht kostenlos. Das war Grund genug mir GitKraken zu installieren und zu testen.
-</div>
-</div>
-</div>
-</div>
-<div class="relative w-100 w-30-l mb4 bg-white"><div class="relative w-100 mb4 bg-white nested-copy-line-height">
-<div class="bg-white mb3 pa4 gray overflow-hidden">
-<span class="f6 db">Blog</span>
-<h1 class="f3 near-black">
-<a href=/blog/blog-start/ class="link black dim">
-Blog Start
-</a>
-</h1>
-<div class="nested-links f5 lh-copy nested-copy-line-height">
-Und so starte ich ein neues Kapitel meiner Bloggeschichte.
-Ich möchte mich hier mit meinen Softwareprojekten und anderen Themen die ich in die Welt bringen möchte verewigen.
-Was wann und in welchen Zeitlichen Abstand es einen neuen Artikel geben wird ist nicht fest. Ich möchte diesen Blog einfach als eine Art Baindump für mache Ideen und Erkentnisse nutzen.
-Ich befasse mich im Moment sehr stark mit Python und im speziellen mit unserem OpenSource Barbot Projekt Hector9000.
-</div>
-</div>
-</div>
-</div>
-</section></article>
+<aside class="w-30-l mt6-l">
+</aside>
+</article>
 </main>
 <footer class="bg-dark-gray bottom-0 w-100 pa3" role=contentinfo>
 <div class="flex justify-between">
