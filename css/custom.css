@@ -1,6 +1,15 @@
 .nested-links a {
-    color: grey ;
-  }
-  *|*:link{
-  color: grey;
+  color: green;
+}
+
+.nested-links a:visited {
+  color: green; /* Change this to the color you want for visited links */
+}
+
+*|*:link {
+  color: green;
+}
+
+*|*:link:visited {
+  color: green; /* Change this to the color you want for visited links */
 }
