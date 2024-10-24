@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 96 96" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" xmlns:serif="http://www.serif.com/" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.5;">
+    <g id="Ebene1">
+        <g>
+            <g transform="matrix(1.75729,0,0,1.86553,-77.6794,-68.7466)">
+                <ellipse cx="71.663" cy="62.482" rx="27.248" ry="25.637" style="stroke:white;stroke-width:0.55px;"/>
+            </g>
+            <g transform="matrix(1,0,0,1,10.6952,-33.8495)">
+                <g transform="matrix(15.2632,0,0,15.2632,42.2561,84.9201)">
+                </g>
+                <text x="34.991px" y="84.92px" style="font-family:'Rustico-Regular', 'Rustico';font-size:15.263px;fill:rgb(0,255,26);">-</text>
+            </g>
+            <g transform="matrix(1,0,0,1,-9.1868,-25.507)">
+                <g transform="matrix(12.9381,0,0,12.9381,97.7474,95.2401)">
+                </g>
+                <text x="73.721px" y="95.24px" style="font-family:'Rustico-Regular', 'Rustico';font-size:12.938px;fill:rgb(0,255,26);">own</text>
+            </g>
+            <g transform="matrix(1,0,0,1,14.6096,-13.2077)">
+                <g transform="matrix(12.9381,0,0,12.9381,30.2404,74.4839)">
+                </g>
+                <text x="18.092px" y="74.484px" style="font-family:'Rustico-Regular', 'Rustico';font-size:12.938px;fill:rgb(0,255,26);">ev</text>
+            </g>
+            <g transform="matrix(1,0,0,1,-5.92154,-5.24626)">
+                <g transform="matrix(66.1974,0,0,66.1974,85.2369,78.9089)">
+                </g>
+                <text x="50.351px" y="78.909px" style="font-family:'Rustico-Regular', 'Rustico';font-size:66.197px;fill:rgb(0,255,26);">T</text>
+            </g>
+            <g transform="matrix(1,0,0,1,3.62111,6.35725)">
+                <g transform="matrix(64.5146,0,0,64.5146,43.3193,50.4424)">
+                </g>
+                <text x="5.127px" y="50.442px" style="font-family:'Rustico-Regular', 'Rustico';font-size:64.515px;fill:rgb(0,255,26);">D</text>
+            </g>
+        </g>
+    </g>
+</svg>
